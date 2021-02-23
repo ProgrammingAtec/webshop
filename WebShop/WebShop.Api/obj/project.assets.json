@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Education\\Web-Shop\\WebShop\\WebShop.csproj",
-      "projectName": "WebShop",
-      "projectPath": "E:\\Education\\Web-Shop\\WebShop\\WebShop.csproj",
+      "projectUniqueName": "E:\\Education\\WebShop\\WebShop\\WebShop.Api\\WebShop.Api.csproj",
+      "projectName": "WebShop.Api",
+      "projectPath": "E:\\Education\\WebShop\\WebShop\\WebShop.Api\\WebShop.Api.csproj",
       "packagesPath": "C:\\Users\\Александр\\.nuget\\packages\\",
-      "outputPath": "E:\\Education\\Web-Shop\\WebShop\\obj\\",
+      "outputPath": "E:\\Education\\WebShop\\WebShop\\WebShop.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
