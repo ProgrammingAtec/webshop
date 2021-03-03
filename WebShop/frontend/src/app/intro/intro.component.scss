@@ -1,0 +1,116 @@
+.intro {
+    text-align: center;
+    padding: 0; margin: 0;
+    line-height: 0;
+    position: relative;
+
+    .intro__pic {
+        width: 100%; height: calc(100vh - 5rem);
+    }
+
+    .intro__title {
+        position: absolute; top: 52%; left: 10%;
+        height: 10rem; min-width: 35%;
+        background-color: rgb(112, 112, 112, 0.3);
+        display: flex; justify-content: center; align-items: center;
+        font-size: 3.5rem; font-weight: 700; color: #fff;
+        text-transform: uppercase;
+        padding: 0 1rem;
+    }
+}
+
+.banner {
+    background-color: #C4C4C4;
+    height: 30vh;
+    position: relative;
+    margin-bottom: 20vh;
+
+    .within__banner {
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        .circle {
+            width: 36vh; height: 36vh;
+            background-color: #D0F5FF; opacity: 0.2;
+            border-radius: 50%;
+            position: absolute; top: -40%; left: -5%;
+        }
+        
+        .banner__title {
+            font-size: 3.5rem; font-weight: 700; color: #fff;
+            text-transform: uppercase;
+            position: absolute; top: 20%; left: 5%;
+        }
+    }
+
+    img {
+        position: absolute; top: -20%; left: 40%;
+        height: 50vh;
+    }
+}
+
+.btn {
+    display: flex; align-items: center;
+    padding-left: 3rem;
+    font-size: 2.5rem;
+    position: relative; top: 40%; left: 77%;
+
+    &__text {
+        margin-right: 1rem;
+    }
+}
+
+h2 {
+    font-size: 2.25rem;
+    text-transform: uppercase; text-align: center;
+    position: relative;
+    margin-bottom: 10vh;
+
+    &::after {
+        content: "";
+        height: 1px; width: 30vw;
+        background-color: black;
+        position: absolute; top: calc(100% + 2rem); left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.sections {
+    display: flex; justify-content: center;
+    margin: 0 auto;
+    width: 80vw;
+
+    .section__item {
+        flex: 1 1 0;
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media all and (max-width: 480px) {
+    .btn {
+        left: 30%; top: 70%;
+        padding-left: 5rem;
+    }
+
+    .sections {
+        flex-direction: column;
+        line-height: 0;
+    }
+
+    .intro__pic {
+        object-fit: cover;
+    }
+
+    .banner {
+        margin-bottom: 10vh;
+    }
+
+    h2 {
+        margin-bottom: 5vh;
+    }
+}
