@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { WINDOW } from '../shared/injectionTokens/window.token';
+import { Component, OnInit } from '@angular/core';
+import { LayoutService } from '../shared/services/layout.service';
 
 @Component({
   selector: 'app-intro',
@@ -8,10 +8,11 @@ import { WINDOW } from '../shared/injectionTokens/window.token';
 })
 export class IntroComponent implements OnInit {
 
-  constructor(@Inject(WINDOW) private window: Window) { }
+  constructor(
+    public layoutService: LayoutService
+  ) {}
 
   ngOnInit(): void {
-    console.log('window: ', this.window);
   }
 
 }

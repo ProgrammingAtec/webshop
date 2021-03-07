@@ -27,7 +27,7 @@ export function windowFactory (browserWindow: BrowserWindow, platformId: Object)
     return new Object();
 }
 
-const browserWindowProvider: ClassProvider = {
+export const browserWindowProvider: ClassProvider = {
     provide: BrowserWindow,
     useClass: BrowserWindow
 };

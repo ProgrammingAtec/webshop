@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DeliveryModule } from './delivery/delivery.module';
 import { NavComponent } from './nav/nav.component';
 import { IntroModule } from './intro/intro.module';
-import { WINDOW_PROVIDERS } from './shared/injectionTokens/window.token';
+import { WINDOW_PROVIDERS } from './shared/injection-tokens/window.token';
 
 @NgModule({
   declarations: [

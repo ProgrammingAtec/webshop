@@ -16,7 +16,7 @@
         </button>
     </div>
 
-    <img src="assets/blue_sneaker.png" alt="blue_sneaker">
+    <img *ngIf="layoutService.deviceType !== 'mobile'" src="assets/blue_sneaker.png" alt="blue_sneaker">
 </div>
 
 <h2>New line header</h2>
