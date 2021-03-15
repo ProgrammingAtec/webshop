@@ -1,0 +1,9 @@
+E:\Education\WebShop\WebShop\WebShop.Utils\bin\Debug\netstandard2.0\WebShop.Utils.deps.json
+E:\Education\WebShop\WebShop\WebShop.Utils\bin\Debug\netstandard2.0\WebShop.Utils.dll
+E:\Education\WebShop\WebShop\WebShop.Utils\bin\Debug\netstandard2.0\WebShop.Utils.pdb
+E:\Education\WebShop\WebShop\WebShop.Utils\obj\Debug\netstandard2.0\WebShop.Utils.csprojAssemblyReference.cache
+E:\Education\WebShop\WebShop\WebShop.Utils\obj\Debug\netstandard2.0\WebShop.Utils.AssemblyInfoInputs.cache
+E:\Education\WebShop\WebShop\WebShop.Utils\obj\Debug\netstandard2.0\WebShop.Utils.AssemblyInfo.cs
+E:\Education\WebShop\WebShop\WebShop.Utils\obj\Debug\netstandard2.0\WebShop.Utils.csproj.CoreCompileInputs.cache
+E:\Education\WebShop\WebShop\WebShop.Utils\obj\Debug\netstandard2.0\WebShop.Utils.dll
+E:\Education\WebShop\WebShop\WebShop.Utils\obj\Debug\netstandard2.0\WebShop.Utils.pdb
