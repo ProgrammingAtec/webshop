@@ -4,7 +4,7 @@
     outline: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) { // vestibular disorders
     * {
         animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
@@ -12,18 +12,33 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-.btn {
+button {
     text-transform: uppercase;
     border: 0;
     cursor: pointer;
-    width: 250px; height: 60px;
 
     &:hover {
         background-color: #000;
         color: #fff;
+    }
+}
+
+.required {
+    font-style: italic;
+
+    &::before {
+        content: "*";
+    }
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
     }
 }
 

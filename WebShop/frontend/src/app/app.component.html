@@ -1,2 +1,61 @@
-<app-nav></app-nav>
-<router-outlet></router-outlet>
+<header>
+    <app-nav></app-nav>
+</header>
+<main>
+    <router-outlet></router-outlet>
+</main>
+<footer>
+    <ng-container *ngTemplateOutlet="isMobile ? footerWithNavigation : footerWithLogo"></ng-container>
+</footer>
+
+<ng-template #footerWithLogo>
+    <p>Your Brand</p>
+</ng-template>
+
+<ng-template #footerWithNavigation>
+    <ul class="related-navigation">
+        <li class="related-navigation_item"><a href="#">Shops</a></li>
+        <li class="related-navigation__item"><a href="#">Delivery</a></li>
+        <li class="related-navigation__item"><a href="#">News</a></li>
+        <li class="related-navigation__item"><a href="#">Collections</a></li>
+    </ul>
+
+    <hr>
+
+    <ul class="supporting-navigation">
+        <li class="supporting-navigation__item">
+            <div class="item-header" (click)="toggleNavigationItem(body1)">
+                <h4>Support</h4>
+                <ion-icon [class.closed]="body1.classList.contains('closed')" name="add-outline"></ion-icon>
+            </div>
+
+            <div #body1 class="item-body closed">
+                <ul>
+                    <li><a href="#">technical support</a></li>
+                    <li><a href="#">forum</a></li>
+                    <li><a href="#">hotline</a></li>
+                    <li><a href="#">more</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="supporting-navigation__item">
+            <div class="item-header" (click)="toggleNavigationItem(body2)">
+                <h4>Brand</h4>
+                <ion-icon [class.closed]="body2.classList.contains('closed')" name="add-outline"></ion-icon>
+            </div>
+
+            <div #body2 class="item-body closed">
+                <ul>
+                    <li><a href="#">history</a></li>
+                    <li><a href="#">founder</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+    <div class="massmedia">
+        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-vk"></ion-icon></a>
+    </div>
+</ng-template>

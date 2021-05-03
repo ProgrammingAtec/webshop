@@ -4,8 +4,51 @@
         <div class="text">Logo</div>
     </div>
 
-    <a class="nav__item" routerLink="new">New</a>
-    <a class="nav__item" routerLink="goods">Goods</a>
-    <a class="nav__item" routerLink="delivery">Delivery</a>
-    <a class="nav__item" routerLink="about">About</a>
+    <ng-container *ngTemplateOutlet="isMobile ? iconNavigation : verbalNavigation"></ng-container>
 </nav>
+
+<aside *ngIf="showAside" (touchmove)="$event.preventDefault()">
+    <div class="content">
+        <ul *ngIf="!currentCategory" class="aside__home">
+            <li *ngFor="let category of aside.categories" (click)="categoryChanged(category.path)">
+                {{ category.header }}
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </li> 
+        </ul>
+
+        <div *ngIf="currentCategory">
+            <p (click)="categoryBack(currentCategory.path)">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+                {{ currentCategory.parent }}
+            </p>
+
+            <h4>{{ currentCategory.header }}</h4>
+
+            <ul>
+                <ng-container *ngIf="childCategoryHasKids">
+                    <li *ngFor="let category of currentCategory.children" (click)="categoryChanged(category.path)">
+                        {{ category.header }}
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </li>
+                </ng-container>
+                
+                <ng-container *ngIf="!childCategoryHasKids">
+                    <li *ngFor="let category of currentCategory.children"><a href="">{{ category.header }}</a></li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+<ng-template #verbalNavigation>
+    <a routerLink="new">New</a>
+    <a routerLink="goods">Goods</a>
+    <a routerLink="delivery">Delivery</a>
+    <a routerLink="about">About</a>
+</ng-template>
+
+<ng-template #iconNavigation>
+    <ion-icon name="cart-outline"></ion-icon>
+    <ion-icon name="search-outline"></ion-icon>
+    <ion-icon name="menu-outline" (click)="toggleAside()"></ion-icon>
+</ng-template>

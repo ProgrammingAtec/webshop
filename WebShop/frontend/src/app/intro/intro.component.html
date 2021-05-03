@@ -1,36 +1,143 @@
-<div class="intro">
-    <img class="intro__pic" src="https://wonderfulengineering.com/wp-content/uploads/2014/07/Landscape-wallpapers-21.jpg" alt="intro picture">
+<section>
+    <div class="intro">
+        <img class="intro__pic" src="assets/intro.jpg" alt="intro picture">
 
-    <p class="intro__title">Be inspired</p>
-</div>
+        <p class="intro__title">Be inspired</p>
+    </div>
 
-<div class="banner">
-    <div class="within__banner">
-        <div class="circle"></div>
+    <div class="banner">
+        <div class="within__banner">
+            <div class="circle"></div>
 
-        <p class="banner__title">New collection<br>20% off</p>
+            <p class="banner__title">New collection<br>20% off</p>
 
-        <button class="btn">
-            <p class="btn__text">Go</p>
-            <ion-icon name="arrow-forward" class="btn__arrow"></ion-icon>
+            <button>
+                <p>Go</p>
+                <ion-icon name="arrow-forward" class="btn__arrow"></ion-icon>
+            </button>
+        </div>
+
+        <img *ngIf="!isMobile" src="assets/blue_sneaker.png" alt="blue sneaker">
+    </div>
+
+    <section class="new-section-name">
+        <h2>New section name</h2>
+        <div class="categories">
+            <div class="men category__item">
+                <img src="assets/men.png">
+            </div>
+
+            <div class="women category__item">
+                <img src="assets/women.jpg">
+            </div>
+
+            <div class="classic category__item">
+                <img src="assets/classic.png">
+            </div>
+        </div>
+
+        <app-slider></app-slider>
+        <app-prepared-filters></app-prepared-filters>
+    </section>
+
+    <h2>Celebrities' choice</h2>
+
+    <div class="celebrities">
+        <img [src]="isMobile ? 'assets/image.webp' : 'assets/celebrities.jpeg'">
+
+        <div *ngIf="!isMobile" class="rectangle">
+            <p class="rectangle__tittle">Rihanna's golden<br>collection</p>
+        </div>
+
+        <button>
+            <p>Go</p>
+            <ion-icon name="arrow-forward" class="btn__arrow"></ion-icon>    
         </button>
     </div>
 
-    <img *ngIf="layoutService.deviceType !== 'mobile'" src="assets/blue_sneaker.png" alt="blue_sneaker">
-</div>
+    <footer>
+        <nav *ngIf="!isMobile">
+            <div class="column first">
+                <h4>Meet our brand</h4>
+                <ul>
+                    <li><a href="">Modern</a></li>
+                    <li><a href="">New</a></li>
+                    <li><a href="">Bestsellers</a></li>
+                    <li><a href="">Celebrities' choice</a></li>
+                    <li><a href="">Women</a></li>
+                    <li><a href="">Men</a></li>
+                    <li><a href="">Kids</a></li>
+                    <li><a href="">Last supply</a></li>
+                </ul>
+            </div>
 
-<h2>New line header</h2>
-<div class="sections">
-    <div class="men section__item">
-        <img src="assets/men.png" alt="">
+            <div class="column second">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="">Online chat</a></li>
+                    <li><a href="">Technical support</a></li>
+                    <li><a href="">Warranty</a></li>
+                    <li><a href="">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="column third">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="http://www.google.com">Jobs</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">History</a></li>
+                    <li><a href="">Licence</a></li>
+                    <li><a href="">Agreements</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <form class="mailing">
+            <h3>Be aware</h3>
+
+            <p class="mailing__text">Get the latest news Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p class="required">required field</p>
+
+            <div class="gender">
+                <h4>Select your gender</h4>
+
+                <ng-container *ngTemplateOutlet="isMobile ? selector : radioButtons"></ng-container>
+            </div>
+
+            <label class="email">
+                Email:
+                <input type="text" placeholder="specify_your@email.brand">
+            </label>
+
+            <p class="required">submitting mailing you give permission to use current data for information purposes etc</p>
+
+            <button type="submit">Submit</button>
+        </form>
+    </footer>
+</section>
+
+<ng-template #selector>
+    <div class="gender__select">
+        <select>
+            <option value="men">Men</option>
+            <option value="women">Women</option>
+        </select>
+
+        <ion-icon name="play-outline"></ion-icon>
     </div>
+</ng-template>
 
-    <div class="women section__item">
-        <img src="assets/women.jpg" alt="">
+<ng-template #radioButtons>
+    <div class="gender__radio-buttons">
+        <label>
+            <input type="radio" name="gender" value="men">
+            Men
+        </label>
+        
+        <label>
+            <input type="radio" name="gender" value="women">
+            Women
+        </label>
     </div>
-
-    <div class="classic section__item">
-        <img src="assets/classic.png" alt="">
-    </div>
-</div>
-
+</ng-template>
