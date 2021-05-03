@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { IntroComponent } from './intro.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -12,7 +12,7 @@ import { IntroComponent } from './intro.component';
     CUSTOM_ELEMENTS_SCHEMA
   ],
   imports: [
-    CommonModule
+    SharedModule
   ]
 })
 export class IntroModule { }

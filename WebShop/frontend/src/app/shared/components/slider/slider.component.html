@@ -1,0 +1,31 @@
+<h3>Casual</h3>
+
+<div class="container">
+
+    <div *ngIf="layoutService.deviceType !== 'mobile'" class="arrows">
+        <button class="arrow arrow-left" (click)="scroll('left')">
+            <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        </button>
+    
+        <button class="arrow arrow-right" (click)="scroll('right')">
+            <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+        </button>
+    </div>
+
+    <div #content class="content">
+        <div *ngFor="let el of cheen" class="item">
+            <div class="item__image">
+                <img [src]="'assets/' + el.imageUrl" alt="">
+            </div>
+            
+            <div class="details">
+                <div class="item__naming">
+                    <p class="item__naming__header">{{ el.name }}</p>
+                    <p class="item__naming__description">{{ el.previewDescription }}</p>
+                </div>
+                <p class="item__price">{{ el.price }}</p>
+            </div>
+        </div>
+    </div>
+    
+</div>

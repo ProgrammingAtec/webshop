@@ -1,36 +1,84 @@
-nav {
-    display: flex;
+ nav {
+    display: flex; align-items: center;
     margin: 0 auto 2rem auto;
     height: 3rem;
     max-width: 1200px;
-}
 
-.nav__item {
-    display: flex; flex-grow: 1; justify-content: center; align-items: center;
-    text-decoration: none; text-transform: uppercase;
-    font-weight: 700; font-size: 0.875rem;
-    color:black;
+    .logo {
+        display: flex; align-items: center;
+        margin-right: 3rem;
+        cursor: pointer;
+        outline: none;
+    
+        .circle {
+            width: 3rem; height: 3rem;
+            border-radius: 50%;
+            background-color: #C4C4C4;
+        }
+    
+        .text {
+            font-weight: 700; font-style: italic; font-size: 1.25rem;
+            position: relative; left: -20px;
+        }
+    }
 
-    &:hover {
-        background-color: rgb(180,180,180);
-        color: white;
+    a {
+        display: flex; flex-grow: 1; justify-content: center; align-items: center;
+        text-decoration: none; text-transform: uppercase;
+        font-weight: 700; font-size: 0.875rem;
+        color:black;
+    
+        &:hover {
+            background-color: rgb(180,180,180);
+            color: white;
+        }
     }
 }
 
-.logo {
-    display: flex; align-items: center;
-    margin-right: 3rem;
-    cursor: pointer;
-    outline: none;
+@media all and (max-width: 480px) {
+    nav {
+        padding: 2rem 1rem;
 
-    .circle {
-        width: 3rem; height: 3rem;
-        border-radius: 50%;
-        background-color: #C4C4C4;
+        .logo {
+            margin-right: auto;
+
+            .circle {
+                width: 4rem; height: 4rem;
+            }
+        }
+
+        ion-icon {
+            display: flex;
+            font-size: 3rem; color: #000;
+            
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+
+            &[name="menu-outline"] {
+                z-index: 4;
+            }
+        }
     }
 
-    .text {
-        font-weight: 700; font-style: italic; font-size: 1.25rem;
-        position: relative; left: -20px;
+    aside {
+        height: calc(var(--vh, 1vh) * 100);
+        position: absolute; top: 0; left: 0; right: 0; z-index: 3;
+        backdrop-filter: blur(2px);
+        font-size: 2rem;
+    
+        .content {
+            position: absolute; top: 0; bottom: 0; left: 15vw; right: 0;
+            background-color: #fff;
+            padding: 6rem 3rem;
+
+            ul {
+                list-style-type: none;
+
+                li {
+                    display: flex; align-items: center; justify-content: space-between;
+                }
+            }
+        }
     }
 }

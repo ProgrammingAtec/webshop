@@ -1,0 +1,105 @@
+main {
+    background-color: #fff;
+    z-index: 2; position: relative;
+}
+
+footer {
+    display: flex; justify-content: center; align-items: center;
+    position: sticky; bottom: 0; z-index: 1;
+    height: calc(var(--vh, 1vh) * 30); width: 100%;
+    background-color: #000;
+
+    p {
+        color: #fff; font-size: 3rem; text-transform: uppercase;
+    }
+}
+
+@media all and (max-width: 480px) {
+    footer {
+        display: block;
+        height: unset;
+        padding: 1rem;
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+
+            li {
+                color: #fff;
+
+                &:not(:last-child) {
+                    margin-bottom: 0.75rem;
+                }
+            }
+
+            &[class~="related-navigation"] {
+                a {
+                    font-size: 2rem; font-weight: 700; color: #fff;
+                    letter-spacing: 1px;
+                }
+            }
+
+            &[class~="supporting-navigation"] {
+                margin-bottom: 1.25rem;
+
+                li {
+                    .item-header {
+                        display: flex; align-items: center; justify-content: space-between;
+
+                        h4 {
+                            font-size: 2rem; font-weight: 700;
+                        }
+
+                        ion-icon {
+                            font-size: 3rem;
+                            transform: rotate(45deg);
+
+                            &[class~="closed"] {
+                                transform: rotate(0);
+                            }
+                        }
+                    }
+
+                    .item-body {
+                        &[class~="closed"] {
+                            height: 0;
+                            overflow: hidden;
+                        }
+
+                        ul {
+                            text-transform: none;
+
+                            li {
+                                &:not(:last-child) {
+                                    margin-bottom: 0.5rem;
+                                }
+
+                                a {
+                                    font-size: 1.5rem; color: #CFCECE;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        hr {
+            border: none;
+            background-color: #fff;
+            height: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .massmedia {
+            a {
+                color: #fff; font-size: 4.25rem;
+
+                &:not(:last-child) {
+                    margin-right: 1.25rem;
+                }
+            }
+        }
+    }
+}

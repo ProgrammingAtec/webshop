@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .intro {
     text-align: center;
     padding: 0; margin: 0;
@@ -5,7 +7,7 @@
     position: relative;
 
     .intro__pic {
-        width: 100%; height: calc(100vh - 5rem);
+        width: 100%; height: calc(var(--vh, 1vh) * 100 - 5rem);
     }
 
     .intro__title {
@@ -13,8 +15,7 @@
         height: 10rem; min-width: 35%;
         background-color: rgb(112, 112, 112, 0.3);
         display: flex; justify-content: center; align-items: center;
-        font-size: 3.5rem; font-weight: 700; color: #fff;
-        text-transform: uppercase;
+        font-size: 3.5rem; font-weight: 700; color: #fff; text-transform: uppercase;
         padding: 0 1rem;
     }
 }
@@ -23,7 +24,7 @@
     background-color: #C4C4C4;
     height: 30vh;
     position: relative;
-    margin-bottom: 20vh;
+    margin-bottom: calc(var(--vh, 1vh) * 20);
 
     .within__banner {
         height: 100%;
@@ -32,32 +33,31 @@
 
         .circle {
             width: 36vh; height: 36vh;
-            background-color: #D0F5FF; opacity: 0.2;
+            background-color: #D0F5FF; opacity: 20%;
             border-radius: 50%;
             position: absolute; top: -40%; left: -5%;
         }
         
         .banner__title {
-            font-size: 3.5rem; font-weight: 700; color: #fff;
-            text-transform: uppercase;
+            font-size: 3.5rem; font-weight: 700; color: #fff; text-transform: uppercase;
             position: absolute; top: 20%; left: 5%;
+        }
+
+        button {
+            display: flex; align-items: center;
+            padding-left: 3rem;
+            position: relative; top: 40%; left: 77%;
+        
+            p {
+                margin-right: 1rem;
+                font-size: 2.5rem;
+            }
         }
     }
 
     img {
         position: absolute; top: -20%; left: 40%;
-        height: 50vh;
-    }
-}
-
-.btn {
-    display: flex; align-items: center;
-    padding-left: 3rem;
-    font-size: 2.5rem;
-    position: relative; top: 40%; left: 77%;
-
-    &__text {
-        margin-right: 1rem;
+        height: calc(var(--vh, 1vh) * 50);
     }
 }
 
@@ -65,7 +65,7 @@ h2 {
     font-size: 2.25rem;
     text-transform: uppercase; text-align: center;
     position: relative;
-    margin-bottom: 10vh;
+    margin-bottom: calc(var(--vh, 1vh) * 7);
 
     &::after {
         content: "";
@@ -76,41 +76,298 @@ h2 {
     }
 }
 
-.sections {
+.categories {
     display: flex; justify-content: center;
-    margin: 0 auto;
-    width: 80vw;
+    margin-bottom: calc(var(--vh, 1vh) * 10);
 
-    .section__item {
+    .category__item {
         flex: 1 1 0;
+        opacity: 90%;
+        position: relative;
+
+        &:hover {
+            opacity: 100%;
+            cursor: pointer;
+
+            &::after {
+                visibility: hidden;
+            }
+        }
+
+        &::after {
+            position: absolute; left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem; color: #fff; font-weight: 700; text-transform: uppercase;
+            opacity: 100%;
+        }
+
+        &[class~="men"]::after {
+            content: "men";
+        }
+
+        &[class~="women"]::after {
+            content: "women";
+        }
+
+        &[class~="classic"]::after {
+            content: "classic";
+        }
         
         img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
         }
     }
 }
 
-@media all and (max-width: 480px) {
-    .btn {
-        left: 30%; top: 70%;
-        padding-left: 5rem;
-    }
+.celebrities {
+    height: 100vh;
+    position: relative;
+    margin-bottom: calc(var(--vh, 1vh) * 10);
 
-    .sections {
-        flex-direction: column;
-        line-height: 0;
-    }
-
-    .intro__pic {
+    img {
+        width: 100%; height: 100%;
         object-fit: cover;
+    }
+
+    .rectangle {
+        width: 40vw; height: 30%;
+        position: absolute; top: 50%; left: 5%;
+        background-color: rgb(#C4C4C4, 0.4);
+
+        .rectangle__tittle {
+            font-size: 4.5rem; color: #fff; text-transform: uppercase;
+            margin: 3rem 0 0 2rem;
+            line-height: 140%;
+        }
+    }
+
+    button {
+        display: flex; align-items: center;
+        padding-left: 3rem;
+        position: absolute; top: 70%; left: calc(5% + 33vw);
+    
+        p {
+            margin-right: 1rem;
+            font-size: 2.5rem;
+        }
+    }
+}
+
+footer {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex; justify-content: space-between;
+
+    nav {
+        width: 40vw;
+        display: flex; justify-content: space-between;
+
+        h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+        }
+
+
+        ul {
+            list-style-type: none;
+
+            li {
+                a {
+                    display: block;
+                    line-height: 200%;
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .mailing {
+        padding: 1rem 3rem;
+        width: 30vw; max-width: 700px;
+        background-color: #BABABA;
+        color: #fff;
+        display: grid;
+
+        h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        &__text {
+            font-size: 1.25rem;
+        }
+
+        .required {
+            text-align: right;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .gender {
+            text-align: center;
+            margin-bottom: 1rem;
+
+            h4 {
+                margin-bottom: 1.5rem;
+                font-size: 1.5rem
+            }
+
+            .gender__radio-buttons {
+                label {
+                    &:not(:last-child) {
+                        margin-right: 2rem;
+                    }
+    
+                    input {
+                        appearance: none;
+                        display: inline-block;
+                        position: relative;
+                        height: calc(1rem - 2px); width: calc(1rem - 2px);
+                        background-color: transparent;
+                        border-radius: 50%; border: 1px solid #fff;
+    
+                        &:checked {
+                            &::before {
+                                content: "";
+                                display: inline-block;
+                                height: 50%; width: 50%;
+                                background: #fff;
+                                border-radius: 50%; border: 1px solid #fff;
+                                position: absolute; top: 50%; left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .email {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+
+            input {
+                display: block;
+                width: 100%;
+                border: none;
+                font-size: 1.25rem; color: #7a7a7a;
+                padding: 0.25rem 0.75rem;
+
+                &::placeholder {
+                    color: #C4C4C4;
+                }
+            }
+        }
+
+        button {
+            justify-self: end;
+        }
+    }
+}
+
+.new-section-name {
+    width: 80vw;
+    margin: 0 auto calc(var(--vh, 1vh) * 10) auto;
+}
+
+button {
+    width: 250px; height: 60px;
+}
+
+app-slider {
+    margin-bottom: 10vh;
+}
+
+.btn__arrow {
+    font-size: 2.5rem;
+}
+
+@media all and (max-width: 480px) {
+    .intro {
+        .intro__pic {
+            object-fit: cover;
+        }
     }
 
     .banner {
         margin-bottom: 10vh;
+
+        .within__banner {
+            button {
+                left: 30%; top: 70%;
+                padding-left: 5rem;
+            }
+        }
+    }
+
+    section {
+        &[class~="new-section-name"] {
+            margin: 0 0 calc(var(--vh, 1vh) * 10) 0;
+            width: 100%;
+        }
+    }
+
+    .categories {
+        flex-direction: column;
+        line-height: 0;
     }
 
     h2 {
         margin-bottom: 5vh;
+
+        &::after {
+            width: 70vw;
+        }
+    }
+
+    .celebrities {
+        height: calc(var(--vh, 1vh) * 70);
+        margin-bottom: 0;
+
+        .rectangle {
+            width: 50vw;
+            left: 0; top: 40%;
+            
+            .rectangle__tittle {
+                font-size: 2.5rem; color: rgb(#FFF065, 90%); font-weight: 700;
+                margin: 1rem 0 0 1rem;
+            }
+        }
+
+        button {
+            top: unset; left: unset; right: 1rem; bottom: 1rem;
+        }
+    }
+
+    footer {
+        width: 100%;
+
+        .mailing {
+            width: 100%;
+            padding: 1rem 2rem;
+
+            .gender {
+                .gender__select {
+                    position: relative;
+
+                    select {
+                        appearance: none;
+                        width: 100%;
+                        font-size: 1.25rem; color: #7a7a7a;
+                        padding: 0.25rem 0.75rem;
+                        background-color: #fff;
+                        border: none;
+                    }
+
+                    ion-icon {
+                        position: absolute; right: 0.75rem; top: 50%;
+                        transform: translateY(-50%);
+                        color: #7a7a7a; font-size: 1.25rem;
+                    }
+                }
+            }
+        }
     }
 }

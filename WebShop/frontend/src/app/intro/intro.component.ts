@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LayoutService } from '../shared/services/layout.service';
 
 @Component({
@@ -6,13 +6,13 @@ import { LayoutService } from '../shared/services/layout.service';
   templateUrl: './intro.component.html',
   styleUrls: ['./intro.component.scss']
 })
-export class IntroComponent implements OnInit {
+export class IntroComponent {
+
+  get isMobile(): boolean {
+    return this.layoutService.deviceType === 'mobile';
+  }
 
   constructor(
     public layoutService: LayoutService
   ) {}
-
-  ngOnInit(): void {
-  }
-
 }
