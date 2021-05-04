@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from "@angular/common";
-import { ClassProvider, FactoryProvider, InjectionToken, PLATFORM_ID } from "@angular/core";
+import { ClassProvider, FactoryProvider, InjectionToken, PLATFORM_ID, Injectable } from "@angular/core";
 
 export const WINDOW = new InjectionToken('WindowToken');
 
@@ -9,6 +9,7 @@ export abstract class WindowRef {
     }
 }
 
+@Injectable()
 export class BrowserWindow extends WindowRef {
     constructor() {
         super();
