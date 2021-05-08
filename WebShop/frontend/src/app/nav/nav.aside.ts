@@ -9,7 +9,7 @@ export class Aside {
     categories: NavigationCategory[] = [
         {
             header: 'Women',
-            parent: 'all',
+            parent: 'All',
             path: [],
             children: [
                 {
@@ -79,7 +79,7 @@ export class Aside {
 
         {
             header: 'Men',
-            parent: 'all',
+            parent: 'All',
             path: [],
             children: [
                 {

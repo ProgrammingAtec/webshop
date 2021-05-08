@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { IntroModule } from './intro/intro.module';
 import { WINDOW_PROVIDERS } from './shared/injection-tokens/window.token';
 import { NavModule } from './nav/nav.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NavModule } from './nav/nav.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     DeliveryModule,
     IntroModule,
