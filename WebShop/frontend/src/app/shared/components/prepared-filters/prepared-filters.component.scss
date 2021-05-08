@@ -6,7 +6,6 @@ h3 {
     display: flex; justify-content: space-between;
     height: calc(var(--vh, 1vh) * 70);
     margin-bottom: calc(var(--vh, 1vh) * 10);
-    // overflow: hidden;
 
     .filter__item {
         width: calc((100% - 3rem) / 2);

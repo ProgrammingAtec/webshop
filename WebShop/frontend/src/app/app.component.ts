@@ -21,6 +21,7 @@ export class AppComponent {
     public readonly layoutService: LayoutService
   ) {
     let vh = this.window.innerHeight * 0.01;
+    let vw = this.window.innerWidth * 0.01;
     this.document.documentElement.style.setProperty('--vh', `${vh}px`);
     this.window.addEventListener('resize', () => {
       this.document.documentElement.style.setProperty('--vh', `${vh}px`);

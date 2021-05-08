@@ -17,7 +17,6 @@ export class NavComponent {
   }
 
   get childCategoryHasKids() {
-    console.log('hey: ', !!this.currentCategory.children[0].children.length);
     return !!this.currentCategory.children[0].children.length;
   }
 
@@ -35,7 +34,7 @@ export class NavComponent {
 
   categoryChanged(path: string[]): void {
     let categoriesToSearch = this.aside.categories;
-
+    
     for (let i = 0; i < path.length; i++) {
       if (i + 1 === path.length) {
         this.currentCategory = categoriesToSearch.find(category => category.header === path[i]);
