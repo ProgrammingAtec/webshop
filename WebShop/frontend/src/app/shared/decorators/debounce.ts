@@ -7,7 +7,7 @@ export function Debounce(ms: number): Function {
             if (isCooldown) return;
 
             isCooldown = true;
-            originalMethod(arguments);
+            originalMethod.apply(this, arguments);
             setTimeout(() => isCooldown = false, ms);
         }
     }

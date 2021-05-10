@@ -263,6 +263,7 @@ footer {
 
         button {
             justify-self: end;
+            font-size: 2rem;
         }
     }
 }
@@ -274,6 +275,12 @@ footer {
 
 button {
     width: 250px; height: 60px;
+    border: none;
+    
+    &:hover {
+        background-color: #000;
+        color: #fff;
+    }
 }
 
 app-slider {
