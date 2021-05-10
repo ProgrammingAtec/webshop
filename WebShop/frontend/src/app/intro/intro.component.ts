@@ -12,6 +12,14 @@ export class IntroComponent {
     return this.layoutService.deviceType === 'mobile';
   }
 
+  get isTablet(): boolean {
+    return this.layoutService.deviceType === 'tablet';
+  }
+
+  get isComputer(): boolean {
+    return this.layoutService.deviceType === 'desktop' || this.layoutService.deviceType === 'laptop';
+  }
+
   constructor(
     public layoutService: LayoutService
   ) {}

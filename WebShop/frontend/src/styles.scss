@@ -40,3 +40,9 @@ a {
         font-size: 12px;
     }
 }
+
+@media all and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
