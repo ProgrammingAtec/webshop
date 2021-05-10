@@ -9,7 +9,7 @@
         <div class="within__banner">
             <div class="circle"></div>
 
-            <p class="banner__title">New collection<br>20% off</p>
+            <p class="banner__title">New collection</p>
 
             <button>
                 <p>Go</p>
@@ -17,7 +17,7 @@
             </button>
         </div>
 
-        <img *ngIf="!isMobile" src="assets/blue_sneaker.png" alt="blue sneaker">
+        <img *ngIf="!isMobile && !isTablet" src="assets/blue_sneaker.png" alt="blue sneaker">
     </div>
 
     <section class="new-section-name">
@@ -100,9 +100,7 @@
             <p class="required">required field</p>
 
             <div class="gender">
-                <h4>Select your gender</h4>
-
-                <ng-container *ngTemplateOutlet="isMobile ? selector : radioButtons"></ng-container>
+                <ng-container *ngTemplateOutlet="isComputer ? radioButtons : selector"></ng-container>
             </div>
 
             <label class="email">
@@ -119,17 +117,23 @@
 
 <ng-template #selector>
     <div class="gender__select">
-        <select>
-            <option value="men">Men</option>
-            <option value="women">Women</option>
-        </select>
+        <label>
+            Gender:
 
-        <ion-icon name="play-outline"></ion-icon>
+            <select>
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+            </select>
+
+            <ion-icon name="play-outline"></ion-icon>
+        </label>
     </div>
 </ng-template>
 
 <ng-template #radioButtons>
     <div class="gender__radio-buttons">
+        <h4>Select your gender</h4>
+
         <label>
             <input type="radio" name="gender" value="men">
             Men
