@@ -1,0 +1,48 @@
+<section>
+    <header>
+        <div class="catalog-nav">
+            <h2>{{ category.templateHeader.header }}</h2>
+
+            <ul>
+                <li *ngFor="let section of category.templateHeader.sections">
+                    <a [href]="section">{{ section }}</a>
+                </li>
+            </ul>
+        </div>
+
+        <a [href]="category.templateHeader.img.link">
+            <img [src]="category.templateHeader.img.path" alt="man catalog">
+        </a>
+    </header>
+
+    <h2>Big header getting attention</h2>
+
+    <app-slider></app-slider>
+
+    <div #verticalSlider class="vertical-slider" (scroll)="scrollVerticalSlide()">
+        <a *ngFor="let special of category.templateBody.specials" [href]="special.link">
+            <img [src]="special.img" alt="">
+        </a>
+    </div>
+
+    <h2>Alex's gifts</h2>
+
+    <div class="sale-banner" [style.background-image]="'url(' + category.templateBody.banner.img + ')'">
+        <div class="decor-rect">
+            <p>{{ category.templateBody.banner.title }}</p>
+        </div>
+
+        <button>
+            Cart
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+        </button>
+    </div>
+
+    <app-prepared-filters></app-prepared-filters>
+
+    <footer>
+        <ul *ngFor="let column of category.templateFooter">
+            <li *ngFor="let item of column"><a>{{ item }}</a></li>
+        </ul>
+    </footer>
+</section>
