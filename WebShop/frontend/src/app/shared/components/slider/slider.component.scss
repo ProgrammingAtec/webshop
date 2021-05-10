@@ -98,3 +98,28 @@ h3 {
         
     }
 }
+
+@media all and (max-width: 768px) {
+    .container {    
+        .content {
+            .item {
+                min-width: 32%;
+                margin-right: 1rem;
+            }
+        
+            .details {
+                flex-direction: column;
+                
+                .item__naming {
+                    &__header {
+                        font-weight: 700;
+                    }
+            
+                    &__description {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

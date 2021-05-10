@@ -31,7 +31,7 @@ const categories = {
       ],
 
       banner: {
-        title: 'Third with 20% off',
+        title: '20% off on third purchase',
         img: 'assets/sakura_bg.png'
       },
 
