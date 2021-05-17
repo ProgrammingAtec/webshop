@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
@@ -11,6 +12,7 @@ import { WINDOW_PROVIDERS } from './shared/injection-tokens/window.token';
 import { NavModule } from './nav/nav.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CatalogModule } from './catalog/catalog.module';
+import { GridModule } from './grid/grid.module';
 
 @NgModule({
   declarations: [
@@ -24,8 +26,10 @@ import { CatalogModule } from './catalog/catalog.module';
     DeliveryModule,
     IntroModule,
     HomeModule,
+    HttpClientModule,
     NavModule,
-    CatalogModule
+    CatalogModule,
+    GridModule
   ],
   providers: [
     WINDOW_PROVIDERS
