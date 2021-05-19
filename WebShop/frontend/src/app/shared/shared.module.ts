@@ -2,13 +2,15 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { SliderComponent } from './components/slider/slider.component';
 import { PreparedFiltersComponent } from './components/prepared-filters/prepared-filters.component';
+import { ScrollbarComponent } from './components/scrollbar/scrollbar.component';
 
 
 
 @NgModule({
   declarations: [
     SliderComponent,
-    PreparedFiltersComponent
+    PreparedFiltersComponent,
+    ScrollbarComponent
   ],
   imports: [
     CommonModule
@@ -16,6 +18,7 @@ import { PreparedFiltersComponent } from './components/prepared-filters/prepared
   exports: [
     SliderComponent,
     PreparedFiltersComponent,
+    ScrollbarComponent,
     CommonModule
   ],
   schemas: [

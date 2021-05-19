@@ -19,10 +19,14 @@
 
     <app-slider></app-slider>
 
-    <div #verticalSlider class="vertical-slider" (scroll)="scrollVerticalSlide()">
-        <a *ngFor="let special of category.templateBody.specials" [href]="special.link">
-            <img [src]="special.img" alt="">
-        </a>
+    <div class="vertical-slider-wrapper">
+        <div #verticalSlider class="vertical-slider" (scroll)="scrollVerticalSlide()">
+            <a *ngFor="let special of category.templateBody.specials" [href]="special.link">
+                <img [src]="special.img" alt="">
+            </a>
+        </div>
+
+        <app-scrollbar [scrollElement]="verticalSlider"></app-scrollbar>
     </div>
 
     <h2>Alex's gifts</h2>

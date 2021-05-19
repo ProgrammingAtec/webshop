@@ -81,6 +81,240 @@ export const filtersMock: Filter[] = [
         type: 'value',
         value: 'Shirts'
     },
+    {
+        group: 'price',
+        type: 'range',
+        from: 1990,
+        to: 2990
+    },
+    {
+        group: 'price',
+        type: 'range',
+        from: 2990,
+        to: 5990
+    },
+    {
+        group: 'price',
+        type: 'range',
+        from: 5990,
+        to: 13990
+    },
+    {
+        group: 'gender',
+        type: 'value',
+        value: 'Men'
+    },
+    {
+        group: 'gender',
+        type: 'value',
+        value: 'Women'
+    },
+    {
+        group: 'gender',
+        type: 'value',
+        value: 'Kids'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Shoes'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Dresses'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Socks'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Skirts'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Hoodies'
+    },
+    {
+        group: 'new',
+        type: 'value',
+        value: 'Skirts'
+    },
+    {
+        group: 'new',
+        type: 'value',
+        value: 'Hoodies'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Pants'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Shirts'
+    },
+    {
+        group: 'price',
+        type: 'range',
+        from: 1990,
+        to: 2990
+    },
+    {
+        group: 'price',
+        type: 'range',
+        from: 2990,
+        to: 5990
+    },
+    {
+        group: 'price',
+        type: 'range',
+        from: 5990,
+        to: 13990
+    },
+    {
+        group: 'gender',
+        type: 'value',
+        value: 'Men'
+    },
+    {
+        group: 'gender',
+        type: 'value',
+        value: 'Women'
+    },
+    {
+        group: 'gender',
+        type: 'value',
+        value: 'Kids'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Shoes'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Dresses'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Socks'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Skirts'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Hoodies'
+    },
+    {
+        group: 'new',
+        type: 'value',
+        value: 'Skirts'
+    },
+    {
+        group: 'new',
+        type: 'value',
+        value: 'Hoodies'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Pants'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Shirts'
+    },
+    {
+        group: 'price',
+        type: 'range',
+        from: 1990,
+        to: 2990
+    },
+    {
+        group: 'price',
+        type: 'range',
+        from: 2990,
+        to: 5990
+    },
+    {
+        group: 'price',
+        type: 'range',
+        from: 5990,
+        to: 13990
+    },
+    {
+        group: 'gender',
+        type: 'value',
+        value: 'Men'
+    },
+    {
+        group: 'gender',
+        type: 'value',
+        value: 'Women'
+    },
+    {
+        group: 'gender',
+        type: 'value',
+        value: 'Kids'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Shoes'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Dresses'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Socks'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Skirts'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Hoodies'
+    },
+    {
+        group: 'new',
+        type: 'value',
+        value: 'Skirts'
+    },
+    {
+        group: 'new',
+        type: 'value',
+        value: 'Hoodies'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Pants'
+    },
+    {
+        group: 'clothes',
+        type: 'value',
+        value: 'Shirts'
+    },
 ];
 
 export const goodsMock: ShortGood[] = [
