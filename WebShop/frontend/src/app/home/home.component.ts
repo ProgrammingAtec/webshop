@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-    placeholders = [1,2,3,4,5,6];
+    placeholders = [1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,];
 }

@@ -1,0 +1,10 @@
+<div class="body"
+     [style.width]="isHorizontalScroll ? '100%' : '3px'"
+     [style.height]="isHorizontalScroll ? '3px' : '100%'">
+    <div class="head"
+         [style.width]="isHorizontalScroll ? headLong + '%' : '3px'"
+         [style.height]="isHorizontalScroll ? '3px' : headLong + '%'"
+         [style.left.%]="isHorizontalScroll ? headOffset : undefined"
+         [style.top.%]="isHorizontalScroll ? undefined : headOffset">
+    </div>
+</div>

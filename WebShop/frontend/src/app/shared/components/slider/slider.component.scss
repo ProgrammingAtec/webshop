@@ -13,6 +13,13 @@ h3 {
         display: flex;
         overflow: scroll;
         position: relative;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     
         .item {
             min-width: 30%;
@@ -45,6 +52,12 @@ h3 {
                 font-size: 1.25rem;
             }
         }
+    }
+
+    app-scrollbar {
+        position: absolute;
+        left: 0; bottom: -1rem;
+        width: 100%;
     }
     
     .arrows {
