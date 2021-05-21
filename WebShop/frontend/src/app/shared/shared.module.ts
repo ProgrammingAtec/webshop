@@ -4,8 +4,6 @@ import { SliderComponent } from './components/slider/slider.component';
 import { PreparedFiltersComponent } from './components/prepared-filters/prepared-filters.component';
 import { ScrollbarComponent } from './components/scrollbar/scrollbar.component';
 
-
-
 @NgModule({
   declarations: [
     SliderComponent,

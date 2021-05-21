@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { categories } from './catalog.mock';
 
+
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',

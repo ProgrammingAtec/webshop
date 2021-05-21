@@ -314,7 +314,7 @@ export const filtersMock: Filter[] = [
         group: 'clothes',
         type: 'value',
         value: 'Shirts'
-    },
+    }
 ];
 
 export const goodsMock: ShortGood[] = [
