@@ -1,8 +1,10 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscription, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { LayoutService } from '../shared/services/layout.service';
 import { filtersMock, goodsMock } from './grid.mock';
 
 export type Filter = {
@@ -28,18 +30,29 @@ export interface ShortGood {
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.scss']
+  styleUrls: ['./grid.component.scss'],
+  animations: [
+    trigger('smoothOpen', [
+      state('false', style({ height: '0' })),
+      state('true', style({ height: '*' })),
+      transition('true <=> false', animate('0.1s ease-in-out'))
+    ])
+  ]
 })
 export class GridComponent implements OnInit {
   public groupedFilters: FrontendFilter[][];
   public goods: ShortGood[] = [];
   public filtersForm: FormGroup;
   public showLoadingOverlay = false;
+  public showDetailedFilters = false;
+  public baseFilters: FrontendFilter[] = [];
+  public detailedFilters: FrontendFilter[][] = [];
 
   private _originalFilters: Filter[];
   private _subscriptions: Subscription[] = [];
 
   public constructor(
+    public readonly layout: LayoutService,
     private readonly fb: FormBuilder,
     private readonly http: HttpClient,
     private readonly cd: ChangeDetectorRef
@@ -57,8 +70,17 @@ export class GridComponent implements OnInit {
     this._subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
+  public filtersGroupToggle(iconRef: HTMLElement, bodyRef: HTMLElement): void {
+    iconRef.classList.toggle('opened');
+    bodyRef.classList.toggle('opened');
+  }
+
+  public showDetailedFiltersToggle(): void {
+    this.showDetailedFilters = !this.showDetailedFilters;
+  }
+
   private groupFilters() {
-    const groupsOrder = ['clothes', 'gender', 'price'];
+    const groupsOrder = ['clothes', 'gender', 'price', 'brand', 'size'];
     const groupedFilters = [];
     groupsOrder.forEach(() => groupedFilters.push([]));
 
@@ -78,15 +100,16 @@ export class GridComponent implements OnInit {
    }
 
    private getAllGoods(): void {
-     this.goods = goodsMock;
+     this.goods = goodsMock; // recieve through Htpp Get Request
    }
 
    private determineFiltersAsControls(): void {
-    const controls: { [key: string]: any } = {};
-    this.groupedFilters.flat().forEach(filter => controls[filter.control] = [false]);
-
-    this.filtersForm = this.fb.group(controls);
-   }
+    const controlsForBuilder: { [key: string]: any } = {};
+    this.groupedFilters.flat().forEach(filter => controlsForBuilder[filter.control] = [false]);
+    this.filtersForm = this.fb.group(controlsForBuilder);
+    this.baseFilters = this.groupedFilters[0];
+    this.detailedFilters = this.groupedFilters.slice(1);
+  }
 
    private subsFilterControlChanges(): void {
     this._subscriptions.push(this.filtersForm.valueChanges.pipe(

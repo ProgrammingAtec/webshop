@@ -35,6 +35,42 @@ a {
     }
 }
 
+input[type="checkbox"] {
+    appearance: none;
+    border: 2px solid; border-radius: 4px;
+    width: 1rem; height: 1rem;
+    margin-right: 0.5rem;
+
+    &:checked {
+        position: relative;
+
+        &:after, &:before {
+            content: "";
+            display: block;
+            height: 2px;
+            background-color: #000;
+            position: absolute;
+            transform-origin: left;
+        }
+
+        &:after {
+            width: 0.5rem; 
+            transform: rotate(-135deg);
+            top: 80%; left: 50%;
+        }
+
+        &:before {
+            width: 1rem; 
+            transform: rotate(-55deg);
+            top: 80%; left: 50%;
+        }
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
 @media all and (max-width: 480px) {
     html {
         font-size: 12px;
@@ -45,8 +81,4 @@ a {
     html {
         font-size: 14px;
     }
-}
-
-.hidden {
-    visibility: hidden;
 }
