@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { LayoutService } from '../shared/services/layout.service';
 import { Aside, NavigationCategory } from './nav.aside';
 
@@ -8,31 +9,47 @@ import { Aside, NavigationCategory } from './nav.aside';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
-  aside: Aside;
-  currentCategory: NavigationCategory;
-  showAside: boolean = false;
+  @ViewChild('nav')
+  public navRef: ElementRef<HTMLElement>;
 
-  get isMobile() {
+  public aside: Aside;
+  public currentCategory: NavigationCategory;
+  public showAside: boolean = false;
+
+  public changeRoute: (event: MouseEvent) => void = (event) => {
+    if ((event.target as Node).nodeName !== 'A') return;
+
+    this.router.navigate([(event.target as Node).textContent.toLowerCase().replace(' ', '-')]);
+  }
+
+  public get isMobile() {
     return this.layoutService.deviceType === 'mobile';
   }
 
-  get childCategoryHasKids() {
+  public get childCategoryHasKids() {
     return !!this.currentCategory.children[0].children.length;
   }
 
-  constructor(
-    private readonly layoutService: LayoutService
+  public constructor(
+    private readonly layoutService: LayoutService,
+    private readonly router: Router
   ) {
     if (this.isMobile) {
       this.aside = new Aside();
     }
   }
 
-  toggleAside(): void {
+  public ngAfterViewInit(): void {
+    if (this.layoutService.deviceType === 'desktop') {
+      this.navRef.nativeElement.addEventListener('click', this.changeRoute);
+    }
+  }
+
+  public toggleAside(): void {
     this.showAside = !this.showAside;
   }
 
-  categoryChanged(path: string[]): void {
+  public categoryChanged(path: string[]): void {
     let categoriesToSearch = this.aside.categories;
     
     for (let i = 0; i < path.length; i++) {
@@ -46,7 +63,7 @@ export class NavComponent {
     }
   }
 
-  categoryBack(path: string[]): void {
+  public categoryBack(path: string[]): void {
     let tmpPath = [...path];
     tmpPath.splice(-1, 1);
 

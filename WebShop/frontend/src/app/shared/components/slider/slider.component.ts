@@ -16,9 +16,9 @@ export interface ProductModel {
   
 })
 export class SliderComponent {
-  @ViewChild('content') slider: ElementRef<HTMLElement>;
+  @ViewChild('content') public slider: ElementRef<HTMLElement>;
 
-  cheen: ProductModel[] = items;
+  public cheen: ProductModel[] = items;
 
   constructor(
     public layoutService: LayoutService

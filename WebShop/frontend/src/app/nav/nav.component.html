@@ -1,4 +1,4 @@
-<nav>
+<nav #nav>
     <div class="logo" routerLink="home">
         <div class="circle"></div>
         <div class="text">Logo</div>
@@ -59,8 +59,8 @@
 </ng-template>
 
 <ng-template #verbalNavigation>
-    <div routerLink="new">
-        <p>New</p>
+    <div class="nav__item">
+        <a>New</a>
         <div class="pop-up">
             <ul>
                 <li><a>Women</a></li>
@@ -91,8 +91,8 @@
         </div>
     </div>
 
-    <div routerLink="goods">
-        <p>Goods</p>
+    <div class="nav__item">
+        <a>Goods</a>
         <div class="pop-up">
             <ul>
                 <li><a>Jewerly</a></li>
@@ -130,8 +130,8 @@
         </div>
     </div>
     
-    <div routerLink="delivery">
-        <p>Delivery</p>
+    <div class="nav__item">
+        <a>Delivery</a>
         <div class="pop-up">
             <ul>
                 <li><a>Shops</a></li>
@@ -161,8 +161,8 @@
         </div>
     </div>
 
-    <div routerLink="about">
-        <p>About</p>
+    <div class="nav__item">
+        <a>About</a>
         <div class="pop-up">
             <ul>
                 <li><a>Address</a></li>
