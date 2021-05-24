@@ -314,6 +314,71 @@ export const filtersMock: Filter[] = [
         group: 'clothes',
         type: 'value',
         value: 'Shirts'
+    },
+    {
+        group: 'brand',
+        type: 'value',
+        value: 'abibas'
+    },
+    {
+        group: 'brand',
+        type: 'value',
+        value: 'de_nuke'
+    },
+    {
+        group: 'brand',
+        type: 'value',
+        value: 'de_train'
+    },
+    {
+        group: 'brand',
+        type: 'value',
+        value: 'de_dust'
+    },
+    {
+        group: 'brand',
+        type: 'value',
+        value: 'penguin'
+    },
+    {
+        group: 'brand',
+        type: 'value',
+        value: 'de_overpass'
+    },
+    {
+        group: 'size',
+        type: 'value',
+        value: '10'
+    },
+    {
+        group: 'size',
+        type: 'value',
+        value: '20'
+    },
+    {
+        group: 'size',
+        type: 'value',
+        value: '30'
+    },
+    {
+        group: 'size',
+        type: 'value',
+        value: '40'
+    },
+    {
+        group: 'size',
+        type: 'value',
+        value: '50'
+    },
+    {
+        group: 'size',
+        type: 'value',
+        value: '60'
+    },
+    {
+        group: 'size',
+        type: 'value',
+        value: '70'
     }
 ];
 

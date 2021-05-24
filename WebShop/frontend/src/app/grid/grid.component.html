@@ -1,21 +1,5 @@
-<div class="filters" [formGroup]="filtersForm">
-    <div #filters class="scrollable">
-        <p>Total ({{ goods.length }})</p>
-
-        <ul *ngFor="let group of groupedFilters">
-            <h3>{{ group[0].group }}</h3>
-            <li *ngFor="let filter of group">
-                <label>
-                    <input type="checkbox" [formControlName]="filter.control">
-                    {{ filter.type === 'range' ? filter.from : filter.value }}
-                    {{ filter.type === 'range' ? '-' + filter.to : undefined}}
-                </label>
-            </li>
-        </ul>
-    </div>    
-    
-    <app-scrollbar [scrollElement]="filters"></app-scrollbar>
-</div>
+<ng-container *ngTemplateOutlet="layout.deviceType === 'desktop' ? filtersDesktop : filtersMobile">
+</ng-container>
 
 <div class="grid-wrapper">
     <div #grid class="grid">
@@ -34,5 +18,65 @@
         <div class="empty-overlay" *ngIf="!goods.length">Nothing Found</div>
     </div>
     
-    <app-scrollbar [scrollElement]="grid"></app-scrollbar>
+    <app-scrollbar *ngIf="layout.deviceType === 'desktop'" [scrollElement]="grid"></app-scrollbar>
 </div>
+
+<div *ngIf="showDetailedFilters" class="detailed-filters" [formGroup]="filtersForm">
+    <div class="content">
+        <section *ngFor="let filterGroup of detailedFilters">
+            <header (click)="filtersGroupToggle(icon, body); $event.stopPropagation()">
+                <h4>{{ filterGroup[0].group }}</h4>
+                <ion-icon #icon name="add-outline"></ion-icon>
+            </header>
+    
+            <ul #body [@smoothOpen]="body.classList.contains('opened')">
+                <li *ngFor="let filter of filterGroup">
+                    <label>
+                        <input type="checkbox" [formControlName]="filter.control">{{ filter.control }}
+                    </label>
+                </li>
+            </ul>
+        </section>
+    
+        <button (click)="showDetailedFiltersToggle()">Apply</button>
+    </div>
+</div>
+
+<ng-template #filtersDesktop>
+    <div class="filters" [formGroup]="filtersForm">
+        <div #filters class="scrollable">
+            <p>Total ({{ goods.length }})</p>
+
+            <ul *ngFor="let group of groupedFilters">
+                <h3>{{ group[0].group }}</h3>
+                <li *ngFor="let filter of group">
+                    <label>
+                        <input type="checkbox" [formControlName]="filter.control">
+                        {{ filter.type === 'range' ? filter.from : filter.value }}
+                        {{ filter.type === 'range' ? '-' + filter.to : undefined}}
+                    </label>
+                </li>
+            </ul>
+        </div>    
+        
+        <app-scrollbar [scrollElement]="filters"></app-scrollbar>
+    </div>
+</ng-template>
+
+<ng-template #filtersMobile>
+    <div class="filters" [formGroup]="filtersForm">
+        <div class="filters__header">
+            <p>Total ({{ goods.length }})</p>
+
+            <ion-icon name="filter-outline" (click)="showDetailedFiltersToggle()"></ion-icon>
+        </div>
+        <ul>
+            <li *ngFor="let filter of baseFilters">
+                <label>
+                    <input type="checkbox" [formControlName]="filter.control">
+                    {{ filter.value }}
+                </label>
+            </li>
+        </ul>
+    </div>
+</ng-template>
