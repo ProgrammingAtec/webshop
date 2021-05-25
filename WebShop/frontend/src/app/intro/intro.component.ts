@@ -7,20 +7,19 @@ import { LayoutService } from '../shared/services/layout.service';
   styleUrls: ['./intro.component.scss']
 })
 export class IntroComponent {
-
-  get isMobile(): boolean {
+  public get isMobile(): boolean {
     return this.layoutService.deviceType === 'mobile';
   }
 
-  get isTablet(): boolean {
+  public get isTablet(): boolean {
     return this.layoutService.deviceType === 'tablet';
   }
 
-  get isComputer(): boolean {
+  public get isComputer(): boolean {
     return this.layoutService.deviceType === 'desktop' || this.layoutService.deviceType === 'laptop';
   }
 
-  constructor(
+  public constructor(
     public layoutService: LayoutService
   ) {}
 }

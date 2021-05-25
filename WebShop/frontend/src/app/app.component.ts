@@ -9,13 +9,13 @@ import { LayoutService } from './shared/services/layout.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isNavigationItemClosed = false;
+  public isNavigationItemClosed = false;
 
-  get isMobile(): boolean {
+  public get isMobile(): boolean {
     return this.layoutService.deviceType === 'mobile';
   }
 
-  constructor(
+  public constructor(
     @Inject(WINDOW) private readonly window: Window & Object,
     @Inject(DOCUMENT) private readonly document: Document,
     public readonly layoutService: LayoutService
@@ -28,7 +28,7 @@ export class AppComponent {
     })
   }
 
-  toggleNavigationItem(body: HTMLElement): void {
+  public toggleNavigationItem(body: HTMLElement): void {
     const isOpened = body.classList.contains('opened');
     body.classList.replace(isOpened ? 'opened' : 'closed', isOpened ? 'closed' : 'opened');
     this.document.documentElement.scrollTop = this.document.documentElement.scrollHeight;

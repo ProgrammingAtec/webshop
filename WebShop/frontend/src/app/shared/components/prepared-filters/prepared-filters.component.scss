@@ -84,7 +84,7 @@ h3 {
     }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 481px) and (max-width: 768px) {
     .filters {
         height: calc(var(--vh, 1vh) * 40);
         margin-bottom: calc(var(--vh, 1vh) * 7);

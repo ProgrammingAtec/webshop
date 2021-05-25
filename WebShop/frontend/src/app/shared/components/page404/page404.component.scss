@@ -1,0 +1,28 @@
+:host {
+    display: block;
+    position: relative;
+    height: calc(var(--vh, 1vh) * 100);
+    line-height: 0;
+}
+
+img {
+    height: 100%; width: 100%;
+    object-fit: cover;
+}
+
+h5 {
+    position: absolute;
+    top: 70%; left: 50%;
+    transform: translateX(-50%);
+    color: #fff; font-size: 4rem; overflow-wrap: break-word; white-space: nowrap;
+}
+
+@media all and (max-width: 480px) {
+    :host {
+        height: calc(var(--vh, 1vh) * 100 - 5rem);
+    }
+
+    h5 {
+        font-size: 3rem;
+    }
+}

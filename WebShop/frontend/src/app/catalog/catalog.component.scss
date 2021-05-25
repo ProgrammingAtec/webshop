@@ -100,7 +100,7 @@ section {
 
             p {
                 color: #fff; text-transform: uppercase; font-size: 3rem; font-weight: 700;
-                position: absolute; left: 20%; bottom: 30%;
+                position: absolute; left: 20%; bottom: 20%;
             }
         }
 
@@ -151,7 +151,7 @@ section {
     }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 481px) and (max-width: 768px) {
     section {        
         header {
             width: 90vw;

@@ -28,7 +28,7 @@ export const categories = {
             ],
 
             banner: {
-                title: '20% off on third purchase',
+                title: 'Hype collection sale',
                 img: 'assets/sakura_bg.png'
             },
 
@@ -72,7 +72,7 @@ export const categories = {
             ],
 
             banner: {
-                title: 'Third with 20% off',
+                title: 'Hype collection sale',
                 img: 'assets/sakura_bg.png'
             },
 
@@ -116,7 +116,7 @@ export const categories = {
             ],
 
             banner: {
-                title: 'Third with 20% off',
+                title: 'Hype collection sale',
                 img: 'assets/sakura_bg.png'
             },
 

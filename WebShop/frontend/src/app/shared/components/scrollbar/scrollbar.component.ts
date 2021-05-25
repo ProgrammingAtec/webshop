@@ -19,14 +19,14 @@ export class ScrollbarComponent implements OnInit, OnDestroy {
     return this._isHidden;
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     setTimeout(() => { // angular changeDetector binding issue
       this.subcOnScroll();
       this.defineHeadLong();
     });
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.scrollElement.removeEventListener('scroll', this.scrollListener);
   }
 
