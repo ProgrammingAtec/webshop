@@ -44,7 +44,7 @@
         button {
             display: flex; align-items: center;
             padding-left: 3rem;
-            position: relative; top: 40%; left: 77%;
+            position: absolute; top: 40%; left: 77%;
         
             p {
                 margin-right: 1rem;
@@ -325,7 +325,7 @@ app-slider {
 
         .within__banner {
             button {
-                left: 30%; top: 70%;
+                left: 30%; bottom: 7%; top: unset;
                 padding-left: 5rem;
             }
         }
@@ -380,7 +380,7 @@ app-slider {
     }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 481px) and (max-width: 768px) {
     .intro {        
         .intro__pic {
             height: calc(var(--vh, 1vh) * 50);
@@ -393,9 +393,8 @@ app-slider {
     
         .within__banner {    
             button {
-                position: relative; top: 55%; left: 70%;
-                padding-left: 2rem;
-                width: 175px;
+                bottom: 15%; right: 10%; left: unset; top: unset;
+                // padding-left: 2rem;
             }
         }
     }

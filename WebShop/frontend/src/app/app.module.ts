@@ -3,7 +3,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HomeModule } from './home/home.module';
 import { AppRoutingModule } from './app-routing.module';
 import { DeliveryModule } from './delivery/delivery.module';
 import { NavComponent } from './nav/nav.component';
@@ -25,7 +24,6 @@ import { GridModule } from './grid/grid.module';
     AppRoutingModule,
     DeliveryModule,
     IntroModule,
-    HomeModule,
     HttpClientModule,
     NavModule,
     CatalogModule,
@@ -39,4 +37,4 @@ import { GridModule } from './grid/grid.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
