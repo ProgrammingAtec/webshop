@@ -31,7 +31,7 @@ There are two ways
 - docker
     - login DockerHub (https://hub.docker.com/)
     - find my repo ```dominictoretto``` (https://hub.docker.com/repository/docker/dominictoretto)
-    - run  ```docker pull dominictoretto/webshop:front``` and ```docker start --publish port_you_wish:4200 --name you_cont_name dominictoretto/webshop:front``` after
+    - run  ```docker pull dominictoretto/webshop:front``` and ```docker run --publish port_you_wish:4200 --name you_cont_name dominictoretto/webshop:front``` after
 
 ### Functionality
 Some business logic are commented. They must be uncommented after adding backend and necessary components (may be later, may be never). The goals of project had been already achieved
