@@ -18,15 +18,16 @@ Not to just simplify template
 
 ### Credits
 Project belongs to me and my friend Alexander Duvanov. We decided to practice together. I responsible for Angular Frontend.
-Alexander is responsible for ASP.NET Backend. Current repo was forked into two. Basically they are always in sink. We did it because of CV purposes
+Alexander is responsible for ASP.NET Backend. Current repo was forked into two. Basically they are always in synk. We did it because of CV purposes
 
 ### Run frontend
 There are two ways
-- With Angular
+- frontend only (there is no backend depending yet)
     - copy repo
     - change current directory on ```Webshop/frontend```
     - run ```npm install```
     - run ```npm start``` or ```ng serve```
     - check ```localhost:4200/```
-- With Docker
-    - sign in DockerHub
+- docker
+    - login DockerHub (https://hub.docker.com/)
+    - find my repo ```RepoName``` (link)
