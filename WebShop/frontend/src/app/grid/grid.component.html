@@ -3,16 +3,19 @@
 
 <div class="grid-wrapper">
     <div #grid class="grid">
-        <div *ngFor="let good of goods" class="grid__item">
-            <img [src]="good.image" alt="">
-    
-            <div class="info">
-                <h4 class="info-header">{{ good.name }}</h4>
-                <p class="price">{{ good.price }}</p>
+        <div class="content">
+            <div *ngFor="let good of goods" class="grid__item">
+                <img [src]="good.image" alt="">
+        
+                <div class="info">
+                    <h4 class="info-header">{{ good.name }}</h4>
+                    <p class="price">{{ good.price }}</p>
+                </div>
+        
+                <p class="description">{{ good.description }}</p>
             </div>
-    
-            <p class="description">{{ good.description }}</p>
         </div>
+        
     
         <div class="loading-overlay" *ngIf="showLoadingOverlay"></div>
         <div class="empty-overlay" *ngIf="!goods.length">Nothing Found</div>
