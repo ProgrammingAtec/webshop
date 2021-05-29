@@ -35,14 +35,13 @@ There are two ways
     - run ```docker run --publish port_you_wish:4200 --name your_cont_name dominictoretto/webshop:front```
     - check ```localhost:4200/```
 
-### Functionality
-Available URLs
-- ```host:port/women```
-- ```host:port/men```
-- ```host:port/kids```
-- ```host:port/grid```
-- ```host:port/home```
-- some nav link navigates to grid representation/home page. There is commented ready to use code after adding backend and necessary components
-- easter egg for 404 handler ;)
-
-Some business logic are commented. They must be uncommented after adding backend and necessary components (may be later, may be never). The goals of project had been already achieved
+### Key moments
+- Available URLs
+    - ```host:port/women```
+    - ```host:port/men```
+    - ```host:port/kids```
+    - ```host:port/grid```
+    - ```host:port/home```
+    - some nav link navigates to grid representation/home page. There is commented ready to use code after adding backend and necessary components
+    - easter egg for 404 handler ;)
+- Some business logic are commented. They must be uncommented after adding backend and necessary components (may be later, may be never). The project goals had been already achieved
