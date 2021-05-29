@@ -165,15 +165,17 @@ footer {
             font-size: 1.125rem;
         }
 
-
-        ul {
-            list-style-type: none;
-
-            li {
-                a {
-                    display: block;
-                    line-height: 200%;
-                    color: #000;
+        .column {
+            ul {
+                list-style-type: none;
+    
+                li {
+                    a {
+                        display: block;
+                        line-height: 200%;
+                        color: #000;
+                        cursor: pointer;
+                    }
                 }
             }
         }

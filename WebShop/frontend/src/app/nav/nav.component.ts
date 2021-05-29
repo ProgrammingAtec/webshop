@@ -19,7 +19,8 @@ export class NavComponent {
   public changeRoute: (event: MouseEvent) => void = (event) => {
     if ((event.target as Node).nodeName !== 'A') return;
 
-    this.router.navigate([(event.target as Node).textContent.toLowerCase().replace(' ', '-')]);
+    // this.router.navigate([(event.target as Node).textContent.toLowerCase().replace(' ', '-')]); // real logic
+    this.router.navigate(['grid']); // till no specific good component
   }
 
   public get isMobile() {
@@ -40,7 +41,7 @@ export class NavComponent {
   }
 
   public ngAfterViewInit(): void {
-    if (this.layoutService.deviceType === 'desktop') {
+    if (this.layoutService.deviceType !== 'mobile') {
       this.navRef.nativeElement.addEventListener('click', this.changeRoute);
     }
   }

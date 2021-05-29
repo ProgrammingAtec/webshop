@@ -17,8 +17,8 @@ const routes: Routes = [
     { path: 'home', component: IntroComponent },
     { path: 'about', component: AboutComponent },
     { path: 'delivery', component: DeliveryComponent },
-    { path: 'grid', component: GridComponent, canActivate: [CanActivateGrid] },
-    { matcher: catalogMatcher, component: CatalogComponent },
+    { path: 'grid', component: GridComponent },
+    { matcher: catalogMatcher, component: CatalogComponent, canActivate: [CanActivateGrid] },
     { path: '**', component: Page404Component },
 ];
 
