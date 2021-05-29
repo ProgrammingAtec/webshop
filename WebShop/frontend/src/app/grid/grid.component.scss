@@ -125,7 +125,7 @@
     }
 }
 
-@media all and (max-width: 480px) {
+@media all and (max-width: 768px) {
     :host {
         flex-direction: column;
         width: 100vw;
@@ -177,6 +177,7 @@
     .grid-wrapper {
         .grid {
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            height: 100%;
             padding: 0;
     
             &__item {
@@ -251,6 +252,26 @@
                 border: 1px solid;
                 padding: 0.5rem 0;
                 font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+    .grid-wrapper {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            height: 100%;
+            padding: 0;
+        
+            &__item {
+                &:hover {
+                    box-shadow: none;
+                }
+    
+                img {
+                    height: 400px;
+                }
             }
         }
     }
